@@ -1,0 +1,42 @@
+export default `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Deep Mobile Repairing - Screen, Battery, Charging & Water Damage repairs in Gunjan, Vapi</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Deep Mobile Repairing - Screen, Battery, Charging &amp; Water Damage repairs in Gunjan, Vapi. Call +91 7405433726">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  
+  <!-- Initialize Lucide icons after page load -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+<link rel="stylesheet" href="styles-KR2YK2O4.css"></head>
+<body class="bg-gray-50 text-gray-900"><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script>
+  <app-root></app-root>
+  
+  <!-- Initialize Lucide icons periodically for dynamically loaded content -->
+  <script>
+    // Re-initialize icons every 500ms to catch dynamically loaded content
+    setInterval(() => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }, 500);
+  </script>
+<script src="main-HVXOLAMH.js" type="module"></script></body>
+</html>`;
