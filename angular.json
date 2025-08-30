@@ -74,6 +74,8 @@
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/assets",
+              "src/favicon.ico",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -81,10 +83,16 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "scripts": [
+              "https://unpkg.com/lucide@latest/dist/umd/lucide.js"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8eda49e2-b3a3-4d5e-8c85-ef8035a0bdfb"
   }
 }
