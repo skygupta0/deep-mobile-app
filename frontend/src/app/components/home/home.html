@@ -1,0 +1,469 @@
+<!-- Header -->
+<header class="w-full sticky top-0 z-50 bg-white/90 border-b shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <a routerLink="/" class="flex items-center gap-2">
+        <img src="assets/images/logo.png" alt="Deep Mobile Repairing" class="w-10 h-10 object-contain" loading="eager">
+        <span class="font-semibold text-lg">Deep Mobile Repairing</span>
+      </a>
+    </div>
+    <nav class="hidden md:flex items-center gap-6">
+      <a (click)="scrollToSection('services')" class="hover:text-blue-600 transition-colors cursor-pointer">Services</a>
+      <a (click)="scrollToSection('about')" class="hover:text-blue-600 transition-colors cursor-pointer">About</a>
+      <a (click)="scrollToSection('testimonials')" class="hover:text-blue-600 transition-colors cursor-pointer">Reviews</a>
+      <a (click)="scrollToSection('contact')" class="hover:text-blue-600 transition-colors cursor-pointer">Contact</a>
+      <a routerLink="/warranty" class="hover:text-blue-600 transition-colors">Warranty</a>
+      <a routerLink="/login" class="hover:text-blue-600 transition-colors">Login</a>
+      <a href="https://wa.me/917405433726" target="_blank"
+         class="inline-flex items-center gap-2 rounded-xl btn-primary px-4 py-2">
+         📱 WhatsApp
+      </a>
+    </nav>
+    <button (click)="toggleMobileMenu()" class="md:hidden inline-flex items-center gap-2 rounded-xl border px-3 py-2 hover:bg-gray-50 transition-colors">
+      <span>{{ isMobileMenuOpen ? '✕' : '☰' }}</span> Menu
+    </button>
+  </div>
+  <div *ngIf="isMobileMenuOpen" class="md:hidden border-t bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3">
+      <a (click)="scrollToSection('services')" class="py-2 px-2 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">Services</a>
+      <a (click)="scrollToSection('about')" class="py-2 px-2 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">About</a>
+      <a (click)="scrollToSection('testimonials')" class="py-2 px-2 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">Reviews</a>
+      <a (click)="scrollToSection('contact')" class="py-2 px-2 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer">Contact</a>
+      <a routerLink="/warranty" (click)="closeMobileMenu()" class="py-2 px-2 hover:bg-blue-50 rounded-lg transition-colors">Warranty</a>
+      <a routerLink="/login" (click)="closeMobileMenu()" class="py-2 px-2 hover:bg-blue-50 rounded-lg transition-colors">Login</a>
+      <a href="https://wa.me/917405433726" target="_blank"
+         class="inline-flex items-center gap-2 rounded-xl btn-primary px-4 py-2 w-max mt-2">
+         📱 WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100"></div>
+  <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 relative">
+    <div class="text-center">
+      <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4">
+        Expert Mobile Repair Services
+      </span>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+        Professional Mobile & Laptop Repairs
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+        Fast, reliable, and affordable repair services for all smartphone brands and laptops. Genuine parts & 90-day warranty.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+917405433726"
+           class="inline-flex items-center gap-2 rounded-xl btn-primary px-6 py-3 text-lg pulse-animation">
+          📞 Call Now: +91 7405433726
+        </a>
+        <a href="https://wa.me/917405433726" target="_blank"
+           class="inline-flex items-center gap-2 rounded-xl bg-green-600 text-white px-6 py-3 text-lg hover:bg-green-700 transition-colors">
+          💬 WhatsApp Us
+        </a>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-gray-600">
+        <div class="flex items-center gap-2">⏰ 30-Min Quick Repair</div>
+        <div class="flex items-center gap-2">🛡️ 90-Day Warranty</div>
+        <div class="flex items-center gap-2">⭐ 5000+ Devices Repaired</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Badges -->
+<div class="bg-gray-100 py-8">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-6">
+      <p class="text-gray-600">Trusted by customers across Vapi for quality repairs</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="bg-white p-4 rounded-lg shadow-sm">
+        🏆
+        <p class="font-semibold mt-2">Certified Technicians</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-sm">
+        🛡️
+        <p class="font-semibold mt-2">90-Day Warranty</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-sm">
+        ⚡
+        <p class="font-semibold mt-2">Quick Service</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-sm">
+        💰
+        <p class="font-semibold mt-2">Transparent Pricing</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section id="services" class="py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block px-3 py-1 rounded-full border text-gray-700 text-sm font-medium mb-3">Our Services</span>
+      <h2 class="text-3xl md:text-4xl font-bold">Professional Repair Services</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-3">
+        We repair all major mobile devices and laptops with expert workmanship & genuine parts.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let service of services" 
+           class="block rounded-2xl border bg-white hover:shadow-lg transition-all duration-300 p-6 text-center group cursor-pointer"
+           [routerLink]="service.link">
+        <div class="mx-auto w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
+          <span class="text-2xl">{{ getServiceIcon(service.icon) }}</span>
+        </div>
+        <h3 class="text-xl font-semibold">{{ service.title }}</h3>
+        <p class="text-gray-600 mt-1">{{ service.description }}</p>
+        <p class="text-blue-600 font-medium mt-3">{{ service.price }}</p>
+      </div>
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="tel:+917405433726" class="inline-flex items-center gap-2 rounded-xl btn-primary px-6 py-3 text-lg">
+        📞 Get Free Estimate
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-16 md:py-20 bg-gray-100">
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <span class="inline-block px-3 py-1 rounded-full border text-gray-700 text-sm font-medium mb-3">About Us</span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Expert Mobile Repair Since 2015</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        Gunjan, Vapi me 8+ saal se trusted repair center. Certified technicians, genuine parts, fast turnaround.
+      </p>
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <div class="bg-white p-4 rounded-lg text-center">
+          <h3 class="text-2xl font-bold text-blue-600">5000+</h3>
+          <p class="text-gray-600">Devices Repaired</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg text-center">
+          <h3 class="text-2xl font-bold text-blue-600">98%</h3>
+          <p class="text-gray-600">Satisfaction Rate</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg text-center">
+          <h3 class="text-2xl font-bold text-blue-600">30 min</h3>
+          <p class="text-gray-600">Avg Repair Time</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg text-center">
+          <h3 class="text-2xl font-bold text-blue-600">90 Days</h3>
+          <p class="text-gray-600">Warranty</p>
+        </div>
+      </div>
+      <a (click)="scrollToSection('contact')" class="inline-flex items-center gap-2 rounded-xl btn-primary px-6 py-3 cursor-pointer">
+        📍 Visit Our Store
+      </a>
+    </div>
+    <div class="rounded-2xl p-6 bg-white border shadow-sm">
+      <h3 class="text-xl font-semibold mb-4">Why Choose Us?</h3>
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+          <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            ✅
+          </div>
+          <div>
+            <h4 class="font-medium">Certified Technicians</h4>
+            <p class="text-sm text-gray-600">Experienced professionals with technical certifications</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+          <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            ✔️
+          </div>
+          <div>
+            <h4 class="font-medium">Genuine Parts</h4>
+            <p class="text-sm text-gray-600">Quality components with proper testing</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+          <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            🛡️
+          </div>
+          <div>
+            <h4 class="font-medium">90-Day Warranty</h4>
+            <p class="text-sm text-gray-600">Comprehensive warranty on all repairs</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+          <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+            💰
+          </div>
+          <div>
+            <h4 class="font-medium">Transparent Pricing</h4>
+            <p class="text-sm text-gray-600">No hidden charges, competitive rates</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block px-3 py-1 rounded-full border text-gray-700 text-sm font-medium mb-3">Customer Reviews</span>
+      <h2 class="text-3xl md:text-4xl font-bold">What Our Customers Say</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-3">
+        Don't just take our word for it - hear from our satisfied customers
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div *ngFor="let testimonial of testimonials" class="rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex gap-1 mb-2">
+          <span *ngFor="let star of getStarArray(testimonial.rating)" class="text-yellow-400">⭐</span>
+        </div>
+        <p class="italic text-gray-700">"{{ testimonial.text }}"</p>
+        <p class="mt-3 font-semibold">- {{ testimonial.name }}</p>
+        <p class="text-sm text-gray-500">{{ testimonial.service }}</p>
+      </div>
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="https://g.page/r/CUqkFkL9y-81EBM/review" target="_blank" class="inline-flex items-center gap-2 rounded-xl border border-blue-600 text-blue-600 px-6 py-3 hover:bg-blue-50 transition-colors">
+        ⭐ Leave a Review
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-16 md:py-20 bg-blue-600 text-white">
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+    <div>
+      <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-3">Get In Touch</span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Visit Our Store Today</h2>
+      <p class="text-white/90 mb-8">Need a repair? Visit our store or call us. We're here to help!</p>
+      <div class="space-y-6">
+        <div class="flex items-center gap-4">
+          <div class="bg-white/10 p-3 rounded-full">📍</div>
+          <div>
+            <h3 class="font-semibold">Address</h3>
+            <p class="">Shop No. 27, Nagarseth Chamber, Near Hercules Gym, Opp Gujarat Saree, Gunjan, Vapi-396191</p>
+            <a href="https://goo.gl/maps/example" target="_blank" class="text-white/80 underline text-sm mt-1 inline-block">Get Directions</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="bg-white/10 p-3 rounded-full">📞</div>
+          <div>
+            <h3 class="font-semibold">Phone/WhatsApp</h3>
+            <p class=""><a href="tel:+917405433726" class="underline">+91 7405433726</a></p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="bg-white/10 p-3 rounded-full">⏰</div>
+          <div>
+            <h3 class="font-semibold">Hours</h3>
+            <p class="">Mon–Sat: 9AM–7PM, Sun: 11AM–5PM</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:+917405433726" class="inline-flex items-center gap-2 rounded-xl bg-white text-blue-600 px-4 py-3 font-medium hover:bg-gray-100 transition-colors">
+          📞 Call Now
+        </a>
+        <a href="https://wa.me/917405433726" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-green-500 text-white px-4 py-3 font-medium hover:bg-green-600 transition-colors">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="bg-white text-gray-900 rounded-2xl p-6 shadow-lg">
+      <h3 class="text-xl font-semibold mb-2">Get a Free Quote</h3>
+      <p class="text-gray-600 mb-4">Tell us about your device issue and we'll provide a free estimate.</p>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmitContactForm()" class="space-y-4">
+  <div class="grid grid-cols-2 gap-4">
+    <div>
+      <label class="block mb-1 text-sm">First Name</label>
+      <input
+        type="text"
+        formControlName="first_name"
+        class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+        placeholder="John"
+      />
+      <div *ngIf="contactForm.get('first_name')?.touched && contactForm.get('first_name')?.invalid" class="text-red-500 text-sm">
+        First name is required
+      </div>
+    </div>
+
+    <div>
+      <label class="block mb-1 text-sm">Last Name</label>
+      <input
+        type="text"
+        formControlName="last_name"
+        class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+        placeholder="Doe"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label class="block mb-1 text-sm">Phone Number</label>
+    <input
+      type="tel"
+      formControlName="phone_number"
+      class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+      placeholder="+91 XXXXX XXXXX"
+    />
+    <div *ngIf="contactForm.get('phone_number')?.touched && contactForm.get('phone_number')?.invalid" class="text-red-500 text-sm">
+      Phone number is required
+    </div>
+  </div>
+
+  <div>
+    <label class="block mb-1 text-sm">Device Model</label>
+    <input
+      type="text"
+      formControlName="device_model"
+      class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+      placeholder="iPhone 14 Pro, Galaxy S23, etc."
+    />
+  </div>
+
+  <div>
+    <label class="block mb-1 text-sm">Issue Description</label>
+    <textarea
+      formControlName="issue_description"
+      class="w-full p-3 border rounded-xl h-24 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+      placeholder="Describe the problem..."
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="contactForm.invalid"
+    class="w-full rounded-xl btn-primary px-4 py-3 text-lg"
+  >
+    Get Free Quote
+  </button>
+</form>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block px-3 py-1 rounded-full border text-gray-700 text-sm font-medium mb-3">FAQs</span>
+      <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
+    </div>
+    
+    <div class="space-y-4">
+      <div *ngFor="let faq of faqs; let i = index" class="bg-white border rounded-2xl p-6 cursor-pointer" (click)="toggleFaq(i)">
+        <h3 class="font-semibold text-lg flex items-center justify-between">
+          {{ faq.question }}
+          <span class="text-gray-500">{{ faq.isOpen ? '▲' : '▼' }}</span>
+        </h3>
+        <p *ngIf="faq.isOpen" class="mt-2 text-gray-600">{{ faq.answer }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t bg-white py-12">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+    <!-- Brand Section -->
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-2 mb-4">
+        <img src="assets/images/logo.png" alt="Deep Mobile Repairing" class="w-8 h-8 object-contain">
+        <span class="font-bold text-lg">Deep Mobile Repairing</span>
+      </div>
+      <p class="text-gray-600 mb-4">Quality repairs with genuine parts, fair prices, and fast service since 2015.</p>
+      
+      <!-- Social Media Icons -->
+      <div class="flex gap-4 mt-4">
+        <a href="https://facebook.com/yourpage" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors">
+          📘
+        </a>
+        <a href="https://instagram.com/yourprofile" target="_blank" class="text-gray-500 hover:text-pink-600 transition-colors">
+          📷
+        </a>
+        <a href="https://twitter.com/yourprofile" target="_blank" class="text-gray-500 hover:text-blue-400 transition-colors">
+          🐦
+        </a>
+        <a href="https://wa.me/917405433726" target="_blank" class="text-gray-500 hover:text-green-500 transition-colors">
+          💬
+        </a>
+      </div>
+    </div>
+
+    <!-- Services Links -->
+    <div>
+      <h3 class="font-semibold text-lg mb-4 text-gray-800">Our Services</h3>
+      <ul class="space-y-2 text-gray-600">
+        <li><a routerLink="/iphone" class="hover:text-blue-600 hover:underline transition-colors">iPhone Repair</a></li>
+        <li><a routerLink="/android" class="hover:text-blue-600 hover:underline transition-colors">Android Repair</a></li>
+        <li><a routerLink="/windows" class="hover:text-blue-600 hover:underline transition-colors">Windows Laptop</a></li>
+        <li><a routerLink="/macbook" class="hover:text-blue-600 hover:underline transition-colors">MacBook Repair</a></li>
+        <li><a routerLink="/ipad" class="hover:text-blue-600 hover:underline transition-colors">iPad Repair</a></li>
+        <li><a routerLink="/accessories" class="hover:text-blue-600 hover:underline transition-colors">Accessories</a></li>
+      </ul>
+    </div>
+
+    <!-- Support Links -->
+    <div>
+      <h3 class="font-semibold text-lg mb-4 text-gray-800">Support</h3>
+      <ul class="space-y-2 text-gray-600">
+        <li><a routerLink="/warranty" class="hover:text-blue-600 hover:underline transition-colors">Warranty Info</a></li>
+        <li><a routerLink="/login" class="hover:text-blue-600 hover:underline transition-colors">Repair Status</a></li>
+        <li><a routerLink="/faq" class="hover:text-blue-600 hover:underline transition-colors">FAQs</a></li>
+        <li><a (click)="scrollToSection('contact')" class="hover:text-blue-600 hover:underline transition-colors cursor-pointer">Contact Support</a></li>
+        <li><a routerLink="/privacy" class="hover:text-blue-600 hover:underline transition-colors">Privacy Policy</a></li>
+        <li><a routerLink="/terms" class="hover:text-blue-600 hover:underline transition-colors">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 class="font-semibold text-lg mb-4 text-gray-800">Contact Us</h3>
+      <div class="space-y-3 text-gray-600">
+        <div class="flex items-start gap-2">
+          <span class="text-blue-600 flex-shrink-0 mt-1">📍</span>
+          <p>Shop No. 27, Nagarseth Chamber, Near Hercules Gym, Opp Gujarat Saree, Gunjan, Vapi-396191</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-blue-600">📞</span>
+          <a href="tel:+917405433726" class="hover:text-blue-600 hover:underline transition-colors">+91 7405433726</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-blue-600">📧</span>
+          <a href="mailto:info@deepmobilerepairing.com" class="hover:text-blue-600 hover:underline transition-colors">info@deepmobilerepairing.com</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-blue-600">⏰</span>
+          <p>Mon-Sat: 9AM-7PM, Sun: 11AM-5PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Copyright & Bottom Section -->
+  <div class="border-t mt-8 pt-6">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-300 text-sm">© 2025 Deep Mobile Repairing. All rights reserved.</p>
+      <div class="flex gap-4 mt-3 md:mt-0">
+        <p class="text-gray-300 text-sm">Accepted Payment Methods:</p>
+        <div class="flex gap-2">
+          <span class="text-gray-300">💳</span>
+          <span class="text-gray-300">💰</span>
+          <span class="text-gray-300">📱</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/917405433726" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow z-40">
+  <span class="text-white text-xl">💬</span>
+</a>

@@ -1,0 +1,235 @@
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Main Content -->
+  <main class="min-h-screen py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Customer Login Portal</h1>
+        <p class="text-gray-600">Track your repairs, view history, and manage your account</p>
+      </div>
+
+      <!-- Login Form -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Login Card -->
+        <div class="bg-white rounded-2xl shadow-md p-6">
+          <h2 class="text-xl font-semibold mb-6">Login to Your Account</h2>
+          <form id="loginForm" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Phone Number</label>
+              <input type="tel" class="w-full p-3 border rounded-xl" placeholder="+91 74054 33726" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Password</label>
+              <input type="password" class="w-full p-3 border rounded-xl" placeholder="Enter your password" required>
+            </div>
+            <div class="flex items-center justify-between">
+              <label class="flex items-center">
+                <input type="checkbox" class="rounded text-blue-600">
+                <span class="ml-2 text-sm">Remember me</span>
+              </label>
+              <a href="#forgot-password" class="text-sm text-blue-600 hover:underline">Forgot Password?</a>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-700">
+              Login to Account
+            </button>
+          </form>
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <p class="text-sm text-center text-gray-600">Don't have an account? 
+              <a href="#register" class="text-blue-600 font-medium hover:underline">Register here</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Track Repair Without Login -->
+        <div class="bg-white rounded-2xl shadow-md p-6">
+          <h2 class="text-xl font-semibold mb-6">Track Your Repair</h2>
+          <p class="text-gray-600 mb-4">Enter your repair ticket number to check status without logging in</p>
+          <form class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Repair Ticket Number</label>
+              <input type="text" class="w-full p-3 border rounded-xl" placeholder="e.g. DMR-2023-0876" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Registered Phone Number</label>
+              <input type="tel" class="w-full p-3 border rounded-xl" placeholder="+91 74054 33726" required>
+            </div>
+            <button type="submit" class="w-full bg-gray-800 text-white py-3 rounded-xl font-medium hover:bg-gray-900">
+              Track Repair Status
+            </button>
+          </form>
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <div class="flex items-center bg-blue-50 p-3 rounded-lg">
+              <i data-lucide="info" class="w-5 h-5 text-blue-600 mr-2"></i>
+              <p class="text-sm text-blue-700">Don't know your ticket number? 
+                <a href="tel:+917405433726" class="font-medium underline">Call us</a> or 
+                <a href="https://wa.me/917405433726" class="font-medium underline">WhatsApp</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Repair Status (shown after login) -->
+      <div id="repairStatus" class="hidden mt-12">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-semibold">Your Repair Status</h2>
+          <a href="#" class="text-blue-600 hover:underline">View All Repairs</a>
+        </div>
+        
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+          <!-- Repair Header -->
+          <div class="border-b p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <div>
+              <h3 class="font-semibold">iPhone 13 Pro Max</h3>
+              <p class="text-gray-600">Ticket: <span class="font-mono">DMR-2023-0876</span></p>
+            </div>
+            <div class="mt-2 sm:mt-0">
+              <span class="repair-status-badge status-progress">In Progress</span>
+            </div>
+          </div>
+          
+          <!-- Repair Timeline -->
+          <div class="p-6 border-b">
+            <h4 class="font-medium mb-4">Repair Timeline</h4>
+            <div class="space-y-4">
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+                    <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                  </div>
+                  <div class="w-0.5 h-16 bg-gray-300 mt-2"></div>
+                </div>
+                <div class="pt-1">
+                  <p class="font-medium">Device Diagnostic Completed</p>
+                  <p class="text-sm text-gray-600">Nov 28, 2023 · 10:30 AM</p>
+                  <p class="text-sm mt-1">Screen and battery need replacement</p>
+                </div>
+              </div>
+              
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+                    <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                  </div>
+                  <div class="w-0.5 h-16 bg-gray-300 mt-2"></div>
+                </div>
+                <div class="pt-1">
+                  <p class="font-medium">Approval Received</p>
+                  <p class="text-sm text-gray-600">Nov 28, 2023 · 11:45 AM</p>
+                  <p class="text-sm mt-1">You approved the estimated cost of ₹7,500</p>
+                </div>
+              </div>
+              
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                    <i data-lucide="settings" class="w-4 h-4 text-blue-600"></i>
+                  </div>
+                  <div class="w-0.5 h-16 bg-gray-300 mt-2"></div>
+                </div>
+                <div class="pt-1">
+                  <p class="font-medium">Repair In Progress</p>
+                  <p class="text-sm text-gray-600">Expected completion: Today, 5:00 PM</p>
+                  <p class="text-sm mt-1">Our technician is working on your device</p>
+                </div>
+              </div>
+              
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                    <i data-lucide="clock" class="w-4 h-4 text-gray-400"></i>
+                  </div>
+                </div>
+                <div class="pt-1">
+                  <p class="font-medium text-gray-400">Ready for Pickup</p>
+                  <p class="text-sm text-gray-500">We'll notify you when your device is ready</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Repair Details -->
+          <div class="p-6">
+            <h4 class="font-medium mb-4">Repair Details</h4>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="text-sm font-medium text-gray-600 mb-2">Services</h5>
+                <ul class="space-y-2">
+                  <li class="flex justify-between">
+                    <span>Screen Replacement</span>
+                    <span>₹5,500</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Battery Replacement</span>
+                    <span>₹2,000</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Service Charge</span>
+                    <span>₹500</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="text-sm font-medium text-gray-600 mb-2">Summary</h5>
+                <ul class="space-y-2">
+                  <li class="flex justify-between">
+                    <span>Estimated Total</span>
+                    <span class="font-medium">₹8,000</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Discount</span>
+                    <span class="text-green-600">-₹500</span>
+                  </li>
+                  <li class="flex justify-between text-lg font-semibold border-t pt-2 mt-2">
+                    <span>Final Amount</span>
+                    <span>₹7,500</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="https://wa.me/917405433726" 
+             class="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-3 rounded-xl hover:bg-green-700">
+            <i data-lucide="message-circle" class="w-5 h-5"></i> Message on WhatsApp
+          </a>
+          <a href="tel:+917405433726" 
+             class="inline-flex items-center gap-2 border border-gray-300 px-5 py-3 rounded-xl hover:bg-gray-50">
+            <i data-lucide="phone" class="w-5 h-5"></i> Call Now
+          </a>
+          <button class="inline-flex items-center gap-2 border border-gray-300 px-5 py-3 rounded-xl hover:bg-gray-50">
+            <i data-lucide="printer" class="w-5 h-5"></i> Print Invoice
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script>
+    // Initialize lucide icons
+    lucide.createIcons();
+    
+    // Mobile menu functionality
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    
+    // Login form functionality (demo only)
+    const loginForm = document.getElementById('loginForm');
+    const repairStatus = document.getElementById('repairStatus');
+    
+    loginForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // In a real application, you would verify credentials here
+      // For demo purposes, we'll just show the repair status
+      repairStatus.classList.remove('hidden');
+      
+      // Scroll to repair status
+      repairStatus.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
