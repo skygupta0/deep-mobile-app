@@ -1,6 +1,8 @@
 import express from "express"
 import cors from 'cors'
 import authRoutes from "./routes/auth.js";
+import customerQueryRoutes from "./routes/customerQuery.routes.js";
+import appointmentRoutes from "./routes/appointment.routes.js";
 import passport from "./config/passport.js";
 import dotenv from 'dotenv';
 dotenv.config();
@@ -19,40 +21,8 @@ db.sequelize.authenticate()
 
 
 app.use("/api/auth", authRoutes);
-// API to insert customer query
-app.post("/api/queries", async (req, res) => {
-  try {
-    const { first_name, last_name, phone_number, device_model, issue_description } = req.body;
-    const created = await CustomerQuery.create({
-      firstName: first_name,
-      lastName: last_name,
-      phoneNumber: phone_number,
-      deviceModel: device_model,
-      issueDescription: issue_description
-    });
-
-    res.status(201).json({ success: true, data: created });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ success: false, error: "Database error" });
-  }
-});
-
-// ========================
-// 📌 API: Fetch all customer queries
-// ========================
-app.get("/api/get_all_queries", async (req, res) => {
-  try {
-    const result = await CustomerQuery.findAll({
-      order: [['createdAt', 'DESC']],
-    });
-    res.json({ success: true, data: result });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ success: false, error: "Database error" });
-  }
-});
-
+app.use("/api/queries", customerQueryRoutes);
+app.use("/api/appointments", appointmentRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
