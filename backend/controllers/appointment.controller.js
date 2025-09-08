@@ -63,3 +63,63 @@ export const checkSlotAvailability = async (req, res) => {
     res.status(500).json({ success: false, error: "Database error" });
   }
 };
+
+
+export const getAppointmentByTicketAndPhone = async (req, res) => {
+  try {
+    const { ticketNumber, phoneNumber } = req.query;
+
+    if (!ticketNumber || !phoneNumber) {
+      return res.status(400).json({ message: "Ticket number and phone number are required" });
+    }
+
+    const appointment = await Appointment.findOne({
+      where: { ticketNumber },
+      include: [
+        {
+          model: CustomerQuery,
+          as: "customerQuery",
+          where: { phone_number: phoneNumber },
+          attributes: ["id", "firstName", "phone_number"]
+        }
+      ]
+    });
+
+    if (!appointment) {
+      return res.status(404).json({ message: "No appointment found for provided details" });
+    }
+
+    return res.json(appointment);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
+export const updateAppointment = async (req, res) => {
+  try {
+    const { ticketNumber } = req.params;
+    const { date, timeSlot, pickupRequired, status } = req.body;
+
+    const appointment = await Appointment.findOne({ where: { ticketNumber } });
+
+    if (!appointment) {
+      return res.status(404).json({ message: "Appointment not found" });
+    }
+
+    await appointment.update({
+      date: date ?? appointment.date,
+      timeSlot: timeSlot ?? appointment.timeSlot,
+      pickupRequired: pickupRequired ?? appointment.pickupRequired,
+      status: status ?? appointment.status
+    });
+
+    return res.status(200).json({
+      message: "Appointment updated successfully",
+      appointment
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Failed to update appointment", error: error.message });
+  }
+};
