@@ -12,7 +12,10 @@ constructor(private http: HttpClient) {}
   submitQuery(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/queries`, data);
   }
-    getAllQueries(): Observable<any> {
+  getAllQueries(): Observable<any> {
     return this.http.get(`${this.baseUrl}/get_all_queries`);
+  }
+  register(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/auth/signup`, data);
   }
 }
