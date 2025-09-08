@@ -18,4 +18,7 @@ constructor(private http: HttpClient) {}
   register(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/auth/signup`, data);
   }
+  createAppointment(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/appointments`, data);
+  }
 }

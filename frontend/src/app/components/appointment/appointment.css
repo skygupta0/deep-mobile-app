@@ -1,0 +1,14 @@
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+input, select {
+  outline: none;
+}
